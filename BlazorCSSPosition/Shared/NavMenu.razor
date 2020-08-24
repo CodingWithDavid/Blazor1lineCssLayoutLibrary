@@ -1,0 +1,80 @@
+﻿
+@using SimpleLayouts.Layouts
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">BlazorCSSPosition</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="center">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Centered
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="DeconstructedPancake">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Deconstructed Pancake
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="sidebar">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> SideBar
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="stack">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Stack
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="classic">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Classic
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="grid">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Grid
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="ram">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Repeat Auto Minmax
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="lineUp">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Line Up
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="clamping">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Clamping
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="aspectLib">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Aspect
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

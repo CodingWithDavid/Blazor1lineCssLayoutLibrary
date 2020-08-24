@@ -1,0 +1,23 @@
+﻿@page "/aspectLib"
+
+@layout SimpleLayouts.Share.LibLayout
+
+<div class="aspect_body">
+    <div class="aspect_card">
+        <h1>Title Here</h1>
+        <div class="aspect_visual"></div>
+        <p>Descriptive Text. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed est error repellat veritatis.</p>
+    </div>
+</div>
+
+
+@code {
+
+    private int temp = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        temp += 1;
+        await Task.CompletedTask;
+    }
+}
